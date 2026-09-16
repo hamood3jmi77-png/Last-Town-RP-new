@@ -15,7 +15,7 @@ UPLOAD_DIR = os.path.join(BASE_DIR, "static", "uploads")
 ALLOWED_EXT = {"png", "jpg", "jpeg", "webp", "gif", "svg", "ico"}
 
 app = Flask(__name__)
-app.secret_key = os.environ.get("MTRP_SECRET_KEY", "dev-secret-change-in-production")
+app.secret_key = os.environ.get("LASTTOWN_SECRET_KEY", "dev-secret-change-in-production")
 
 init_db()
 
@@ -236,7 +236,7 @@ COLLECTIONS = {
     },
     "roster": {
         "table": "roster_creators",
-        "label": "صناع المحتوى",
+        "label": "صناع المحتوى والقضاة",
         "fields": [
             ("name", "text", "الاسم"),
             ("platform", "text", "المنصة"),
@@ -268,7 +268,7 @@ COLLECTIONS = {
     },
     "events": {
         "table": "events",
-        "label": "الأحداث",
+        "label": "أحداث LAST TOWN",
         "fields": [
             ("title", "text", "العنوان"),
             ("category", "text", "التصنيف (War/Rivalry/Racing/Heist/Event)"),
@@ -453,14 +453,4 @@ def admin_account():
                 session["admin_username"] = new_username
             if new_password:
                 conn.execute(
-                    "UPDATE admin_users SET password_hash = ? WHERE id = ?",
-                    (generate_password_hash(new_password), user["id"]),
-                )
-            conn.commit()
-            flash("تم تحديث الحساب بنجاح", "success")
-    conn.close()
-    return render_template("admin/account.html")
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5050))
-    app.run(host="0.0.0.0", port=port, debug=True)
+                    "UPDATE admin_users SET
