@@ -7,8 +7,8 @@
     <p class="auth-subtitle">{{ c['auth.subtitle'] }}</p>
 
     <div class="auth-oauth">
-      <button class="btn btn-discord btn-block">{{ ic.icon('discord', 16) }} {{ c['auth.discord_btn'] }}</button>
-      <button class="btn btn-steam btn-block">{{ ic.icon('gear', 16) }} {{ c['auth.steam_btn'] }}</button>
+      <button type="button" class="btn btn-discord btn-block">{{ ic.icon('discord', 16) }} {{ c['auth.discord_btn'] }}</button>
+      <button type="button" class="btn btn-steam btn-block">{{ ic.icon('gear', 16) }} {{ c['auth.steam_btn'] }}</button>
     </div>
 
     <div class="auth-divider">{{ c['auth.divider'] }}</div>
@@ -16,17 +16,20 @@
     <form method="post" action="#">
       <div class="form-group">
         <label class="form-label">{{ c['auth.email_label'] }}</label>
-        <input type="email" class="form-input" placeholder="{{ c['auth.email_placeholder'] }}">
+        <input type="email" name="email" class="form-input" placeholder="{{ c['auth.email_placeholder'] }}" required>
       </div>
       <div class="form-group">
-        <label class="form-label">{{ c['auth.password_label'] }} <a href="#" class="link">{{ c['auth.forgot_password'] }}</a></label>
-        <input type="password" class="form-input" placeholder="{{ c['auth.password_placeholder'] }}">
+        <label class="form-label" style="display:flex;justify-content:space-between;align-items:center;">
+          <span>{{ c['auth.password_label'] }}</span>
+          <a href="#" class="link" style="font-size:0.85rem;">{{ c['auth.forgot_password'] }}</a>
+        </label>
+        <input type="password" name="password" class="form-input" placeholder="{{ c['auth.password_placeholder'] }}" required>
       </div>
-      <button type="submit" class="btn btn-primary btn-block">{{ ic.icon('arrow', 15) }} {{ c['auth.submit'] }}</button>
+      <button type="submit" class="btn btn-primary btn-block">{{ ic.icon('arrow-left', 15) }} {{ c['auth.submit'] }}</button>
     </form>
 
-    <div class="auth-footer">
-      <a href="#">{{ c['auth.signup_prompt'] }}</a>
+    <div class="auth-footer" style="text-align:center;margin-top:1.5rem;">
+      <a href="#" class="link">{{ c['auth.signup_prompt'] }}</a>
     </div>
   </div>
 </div>
