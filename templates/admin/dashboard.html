@@ -3,8 +3,8 @@
 {% import "icons.html" as ic %}
 <div class="admin-header">
   <div>
-    <h1 class="admin-title">مرحباً، {{ session.get('admin_username') }}</h1>
-    <p class="admin-subtitle">من هنا تقدر تتحكم بكل نصوص وصور ومحتوى الموقع.</p>
+    <h1 class="admin-title">مرحباً بك، {{ session.get('admin_username') }}</h1>
+    <p class="admin-subtitle">من هنا يمكنك إدارة وتعديل كافة نصوص، صور، ومحتوى موقع LAST TOWN.</p>
     <div class="header-line"></div>
   </div>
 </div>
@@ -12,17 +12,17 @@
 <div class="stat-grid">
   <div class="stat-tile"><div class="tile-icon">{{ ic.icon('grid', 16) }}</div><div class="num">{{ counts.team }}</div><div class="lbl">أعضاء الفريق</div></div>
   <div class="stat-tile"><div class="tile-icon">{{ ic.icon('followers', 16) }}</div><div class="num">{{ counts.roster }}</div><div class="lbl">صناع المحتوى</div></div>
-  <div class="stat-tile"><div class="tile-icon">{{ ic.icon('doc', 16) }}</div><div class="num">{{ counts.jobs }}</div><div class="lbl">وظائف شاغرة</div></div>
-  <div class="stat-tile"><div class="tile-icon">{{ ic.icon('text', 16) }}</div><div class="num">{{ counts.faqs }}</div><div class="lbl">أسئلة شائعة</div></div>
-  <div class="stat-tile"><div class="tile-icon">{{ ic.icon('fire', 16) }}</div><div class="num">{{ counts.events }}</div><div class="lbl">أحداث</div></div>
-  <div class="stat-tile"><div class="tile-icon">{{ ic.icon('play', 16) }}</div><div class="num">{{ counts.streams }}</div><div class="lbl">بثوث مباشرة</div></div>
-  <div class="stat-tile"><div class="tile-icon">{{ ic.icon('clock', 16) }}</div><div class="num">{{ counts.timeline }}</div><div class="lbl">عناصر الجدول الزمني</div></div>
-  <div class="stat-tile"><div class="tile-icon">{{ ic.icon('globe', 16) }}</div><div class="num">{{ counts.servers }}</div><div class="lbl">سيرفرات</div></div>
+  <div class="stat-tile"><div class="tile-icon">{{ ic.icon('doc', 16) }}</div><div class="num">{{ counts.jobs }}</div><div class="lbl">الوظائف الشاغرة</div></div>
+  <div class="stat-tile"><div class="tile-icon">{{ ic.icon('text', 16) }}</div><div class="num">{{ counts.faqs }}</div><div class="lbl">الأسئلة الشائعة</div></div>
+  <div class="stat-tile"><div class="tile-icon">{{ ic.icon('fire', 16) }}</div><div class="num">{{ counts.events }}</div><div class="lbl">الأحداث والفعاليات</div></div>
+  <div class="stat-tile"><div class="tile-icon">{{ ic.icon('play', 16) }}</div><div class="num">{{ counts.streams }}</div><div class="lbl">البثوث المباشرة</div></div>
+  <div class="stat-tile"><div class="tile-icon">{{ ic.icon('clock', 16) }}</div><div class="num">{{ counts.timeline }}</div><div class="lbl">الجدول الزمني</div></div>
+  <div class="stat-tile"><div class="tile-icon">{{ ic.icon('globe', 16) }}</div><div class="num">{{ counts.servers }}</div><div class="lbl">السيرفرات</div></div>
 </div>
 
 <div class="admin-card">
   <div class="card-line"></div>
-  <h2 style="margin-top:0;font-size:1.05rem;display:flex;align-items:center;gap:0.5rem;">{{ ic.icon('link', 16) }} أقسام سريعة</h2>
-  <p style="color:var(--muted);font-size:0.88rem;">استخدم القائمة على اليمين للوصول لأي قسم: نصوص كل صفحة على حدة، أو القوائم القابلة للتكرار (فريق، صناع محتوى، وظائف، أحداث...).</p>
+  <h2 style="margin-top:0;font-size:1.05rem;display:flex;align-items:center;gap:0.5rem;">{{ ic.icon('link', 16) }} وصول سريع للأقسام</h2>
+  <p style="color:var(--muted);font-size:0.88rem;">استخدم الشريط الجانبي الأيمن للوصول المباشر وإدارة المحتوى (النصوص، فريق العمل، صناع المحتوى، الوظائف، والأحداث).</p>
 </div>
 {% endblock %}
