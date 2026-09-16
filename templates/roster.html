@@ -12,7 +12,7 @@
   {% if creators %}
   <div class="grid-4" style="margin-bottom:4rem;" data-reveal-group>
     {% for cr in creators %}
-    <a href="{{ cr.url or '#' }}" target="_blank" class="card person-card" data-reveal>
+    <a href="{{ cr.url or '#' }}" target="_blank" rel="noopener" class="card person-card" data-reveal style="text-align:center;">
       <img class="person-avatar" src="{{ cr.image or '/static/images/MT.Avatar_1771104723139-yBcHNWFs.png' }}" alt="{{ cr.name }}">
       <div class="person-name">{{ cr.name }}</div>
       <div class="person-role">{{ cr.platform }}</div>
@@ -20,7 +20,7 @@
     {% endfor %}
   </div>
   {% else %}
-  <div class="empty-state" style="max-width:34rem;margin:2rem auto 4rem;" data-reveal>
+  <div class="empty-state" style="max-width:34rem;margin:2rem auto 4rem;text-align:center;" data-reveal>
     <div class="title">{{ c['roster.empty'] }}</div>
     <div>{{ c['roster.empty2'] }}</div>
   </div>
