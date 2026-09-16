@@ -11,7 +11,7 @@
   {% if members %}
   <div class="grid-4" style="margin-bottom:4rem;" data-reveal-group>
     {% for m in members %}
-    <div class="card person-card" data-reveal>
+    <div class="card person-card" data-reveal style="text-align:center;">
       <img class="person-avatar" src="{{ m.image or '/static/images/MT.Avatar_1771104723139-yBcHNWFs.png' }}" alt="{{ m.name }}">
       <div class="person-name">{{ m.name }}</div>
       <div class="person-role">{{ m.role }}</div>
@@ -19,7 +19,7 @@
     {% endfor %}
   </div>
   {% else %}
-  <div class="empty-state" style="max-width:34rem;margin:2rem auto 4rem;" data-reveal>
+  <div class="empty-state" style="max-width:34rem;margin:2rem auto 4rem;text-align:center;" data-reveal>
     <span style="color:var(--orange);">{{ ic.icon('dot', 12) }}</span> {{ c['team.empty'] }}
   </div>
   {% endif %}
