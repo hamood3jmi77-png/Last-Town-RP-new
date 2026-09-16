@@ -4,7 +4,7 @@
 <div class="admin-header">
   <div>
     <h1 class="admin-title">{{ group_label }}</h1>
-    <p class="admin-subtitle">عدل أي نص هنا واضغط "حفظ التغييرات" — التغيير يظهر فوراً في الموقع.</p>
+    <p class="admin-subtitle">عدّل أي نص هنا واضغط "حفظ التغييرات" — التغيير يظهر فوراً في موقع LAST TOWN.</p>
     <div class="header-line"></div>
   </div>
 </div>
@@ -32,7 +32,7 @@
     {% endfor %}
 
     {% if not rows %}
-      <p class="empty-hint">لا توجد نصوص في هذا القسم.</p>
+      <p class="empty-hint">لا توجد نصوص في هذا القسم حالياً.</p>
     {% endif %}
 
     <div class="actions-row">
@@ -44,13 +44,13 @@
 <div class="admin-card">
   <div class="card-line"></div>
   <h2 style="margin-top:0;font-size:1rem;display:flex;align-items:center;gap:0.5rem;">{{ ic.icon('upload', 16) }} رفع صورة مباشرة</h2>
-  <p style="color:var(--muted);font-size:0.85rem;">لو تبي ترفع صورة من جهازك بدل كتابة رابط، اختر الحقل وارفع الملف:</p>
+  <p style="color:var(--muted);font-size:0.85rem;">إذا أردت رفع صورة من جهازك بدلاً من كتابة الرابط، اختر الحقل وارفع الملف:</p>
   {% for row in rows %}
     {% if 'image' in row.key or row.key.endswith('favicon') or row.key.endswith('_bg_image') %}
     <form method="post" enctype="multipart/form-data" action="{{ url_for('admin_content_upload', group=group, key=row.key) }}" style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.7rem;">
       <span style="font-size:0.85rem;color:var(--muted);min-width:14rem;">{{ row.key }}</span>
       <input type="file" name="file" accept="image/*" required>
-      <button type="submit" class="btn btn-outline btn-sm">{{ ic.icon('upload', 13) }} رفع</button>
+      <button type="submit" class="btn btn-outline btn-sm">{{ ic.icon('upload', 13) }} رفع الصورة</button>
     </form>
     {% endif %}
   {% endfor %}
