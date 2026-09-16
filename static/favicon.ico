@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Mystery Town - MT Studios | MTRP | البلدة الغامضة | #1 GTA V RP in MENA</title>
-    <meta name="description" content="Mystery Town Studios (MT / MTRP / البلدة الغامضة / ام تي قراند) — the #1 GTA V FiveM roleplay community in MENA. 300,000+ players, 100+ creator partners, 20M+ monthly views, 50+ staff. Founded in 2019. أكبر سيرفر قراند رولبلاي في الشرق الأوسط." />
-    <meta property="og:title" content="Mystery Town - MT Studios | MTRP | البلدة الغامضة | #1 GTA V RP" />
-    <meta property="og:description" content="MT Studios (البلدة الغامضة / ام تي قراند) — The #1 GTA V RP community in MENA. 300K+ players, 20M+ monthly views, 100+ creator partners. أكبر مجتمع رولبلاي في الشرق الأوسط." />
+    <title>LAST TOWN - LT Studios | LTRP | لاست تاون | #1 GTA V RP in MENA</title>
+    <meta name="description" content="LAST TOWN Studios (LT / LTRP / لاست تاون / لاست قراند) — the #1 GTA V FiveM roleplay community in MENA. 300,000+ players, 100+ creator partners, 20M+ monthly views, 50+ staff. Founded in 2019. أكبر سيرفر قراند رولبلاي في الشرق الأوسط." />
+    <meta property="og:title" content="LAST TOWN - LT Studios | LTRP | لاست تاون | #1 GTA V RP" />
+    <meta property="og:description" content="LT Studios (لاست تاون / لاست قراند) — The #1 GTA V RP community in MENA. 300K+ players, 20M+ monthly views, 100+ creator partners. أكبر مجتمع رولبلاي في الشرق الأوسط." />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Mystery Town - MT Studios | البلدة الغامضة" />
+    <meta property="og:site_name" content="LAST TOWN - LT Studios | لاست تاون" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_SA" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Mystery Town - MT Studios | MTRP | البلدة الغامضة" />
-    <meta name="twitter:description" content="MT / MTRP — The #1 GTA V RP community in MENA. 300K+ players, 20M+ monthly views. البلدة الغامضة - ام تي قراند - أكبر سيرفر رولبلاي." />
-    <meta name="keywords" content="Mystery Town, MT, MTRP, MT Studios, Mystery Town RP, البلدة الغامضة, ام تي, ام تي قراند, ميستري تاون, ام تي ار بي, سيرفر قراند, رولبلاي, GTA V RP, GTA RP, GTA V roleplay, FiveM, FiveM server, FiveM RP, best FiveM server, roleplay, RP, MENA, Middle East, North Africa, gaming community, أفضل سيرفر فايف ام, أكبر سيرفر رولبلاي, سيرفر فايف ام عربي, قراند رولبلاي, best GTA RP server Middle East, largest FiveM community MENA, Arabic GTA RP, arab roleplay server" />
-    <meta name="author" content="Mystery Town Studios (MT Studios)" />
+    <meta name="twitter:title" content="LAST TOWN - LT Studios | LTRP | لاست تاون" />
+    <meta name="twitter:description" content="LT / LTRP — The #1 GTA V RP community in MENA. 300K+ players, 20M+ monthly views. لاست تاون - لاست قراند - أكبر سيرفر رولبلاي." />
+    <meta name="keywords" content="LAST TOWN, LT, LTRP, LT Studios, LAST TOWN RP, لاست تاون, لاست, لاست قراند, لاست تاون ار بي, سيرفر قراند, رولبلاي, GTA V RP, GTA RP, GTA V roleplay, FiveM, FiveM server, FiveM RP, best FiveM server, roleplay, RP, MENA, Middle East, North Africa, gaming community, أفضل سيرفر فايف ام, أكبر سيرفر رولبلاي, سيرفر فايف ام عربي, قراند رولبلاي, best GTA RP server Middle East, largest FiveM community MENA, Arabic GTA RP, arab roleplay server" />
+    <meta name="author" content="LAST TOWN Studios (LT Studios)" />
     <meta name="geo.region" content="SA" />
     <meta name="geo.placename" content="Middle East & North Africa" />
     <link rel="canonical" href="https://staging.mtrp.gg/" />
@@ -38,11 +38,11 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Mystery Town Studios",
-      "alternateName": ["MT Studios", "Mystery Town", "MT", "MTRP", "Mystery Town RP", "البلدة الغامضة", "ام تي قراند", "ميستري تاون", "ام تي", "ام تي ار بي", "سيرفر ام تي"],
+      "name": "LAST TOWN Studios",
+      "alternateName": ["LT Studios", "LAST TOWN", "LT", "LTRP", "LAST TOWN RP", "لاست تاون", "لاست قراند", "لاست تاون", "لاست", "لاست ار بي", "سيرفر لاست"],
       "url": "https://staging.mtrp.gg",
       "logo": "https://staging.mtrp.gg/favicon.png",
-      "description": "Mystery Town Studios (MT Studios) is the #1 and largest GTA V FiveM roleplay community in the Middle East & North Africa (MENA), growing globally. Founded in 2019 with 300,000+ registered players, 100+ creator partners, 20M+ monthly views, and 50+ staff including developers, artists, and admins.",
+      "description": "LAST TOWN Studios (LT Studios) is the #1 and largest GTA V FiveM roleplay community in the Middle East & North Africa (MENA), growing globally. Founded in 2019 with 300,000+ registered players, 100+ creator partners, 20M+ monthly views, and 50+ staff including developers, artists, and admins.",
       "foundingDate": "2019",
       "areaServed": [
         {
@@ -81,10 +81,10 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Mystery Town Studios",
-      "alternateName": ["MT Studios", "MTRP", "البلدة الغامضة", "ام تي قراند"],
+      "name": "LAST TOWN Studios",
+      "alternateName": ["LT Studios", "LTRP", "لاست تاون", "لاست قراند"],
       "url": "https://staging.mtrp.gg",
-      "description": "Official website of Mystery Town Studios (MT / MTRP / البلدة الغامضة) — the #1 GTA V FiveM roleplay community in MENA with 300,000+ players, 20M+ monthly views. Founded in 2019, growing globally. أكبر سيرفر قراند رولبلاي في الشرق الأوسط.",
+      "description": "Official website of LAST TOWN Studios (LT / LTRP / لاست تاون) — the #1 GTA V FiveM roleplay community in MENA with 300,000+ players, 20M+ monthly views. Founded in 2019, growing globally. أكبر سيرفر قراند رولبلاي في الشرق الأوسط.",
       "inLanguage": ["en", "ar", "fr", "es", "pt", "de", "id", "hi", "it"],
       "potentialAction": {
         "@type": "SearchAction",
@@ -101,10 +101,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is Mystery Town Studios?",
+          "name": "What is LAST TOWN Studios?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mystery Town Studios (MT Studios) is the #1 and largest GTA V FiveM roleplay community in the Middle East & North Africa (MENA), growing globally. Founded in 2019 by Abdullah Almuhanna, Saad Alasiri, and other co-founders, it has grown to over 300,000 registered players, 100+ content creator partners, 20M+ monthly views, and a team of 50+ staff including developers, artists, and admins. The three owners — Abdullah Almuhanna, Saad Alasiri, and Jaser Almutairi — lead the biggest gaming and roleplay community in the Arab world."
+            "text": "LAST TOWN Studios (LT Studios) is the #1 and largest GTA V FiveM roleplay community in the Middle East & North Africa (MENA), growing globally. Founded in 2019 by Abdullah Almuhanna, Saad Alasiri, and other co-founders, it has grown to over 300,000 registered players, 100+ content creator partners, 20M+ monthly views, and a team of 50+ staff including developers, artists, and admins. The three owners — Abdullah Almuhanna, Saad Alasiri, and Jaser Almutairi — lead the biggest gaming and roleplay community in the Arab world."
           }
         },
         {
@@ -112,7 +112,7 @@
           "name": "What is the best FiveM server in the Middle East?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mystery Town RP (MTRP) by Mystery Town Studios is the #1 and best FiveM GTA V roleplay server in the Middle East & North Africa (MENA). Founded in 2019, it has 300,000+ registered players, 100+ creator partners, 20M+ monthly views, and the largest Arabic-speaking RP community. Part of the FiveM community and Rockstar Games UGC ecosystem."
+            "text": "LAST TOWN RP (LTRP) by LAST TOWN Studios is the #1 and best FiveM GTA V roleplay server in the Middle East & North Africa (MENA). Founded in 2019, it has 300,000+ registered players, 100+ creator partners, 20M+ monthly views, and the largest Arabic-speaking RP community. Part of the FiveM community and Rockstar Games UGC ecosystem."
           }
         },
         {
@@ -120,39 +120,39 @@
           "name": "What is the largest GTA V roleplay community in MENA?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mystery Town Studios (MT Studios) is the largest GTA V FiveM roleplay community in the Middle East & North Africa with over 300,000 registered players, 20M+ monthly views, and 50+ staff. Founded in 2019, it is the #1 RP server in the MENA region with growth expanding globally, featuring multiple game servers, 100+ content creator partners, and a thriving Arabic-speaking community."
+            "text": "LAST TOWN Studios (LT Studios) is the largest GTA V FiveM roleplay community in the Middle East & North Africa with over 300,000 registered players, 20M+ monthly views, and 50+ staff. Founded in 2019, it is the #1 RP server in the MENA region with growth expanding globally, featuring multiple game servers, 100+ content creator partners, and a thriving Arabic-speaking community."
           }
         },
         {
           "@type": "Question",
-          "name": "How many players does Mystery Town have?",
+          "name": "How many players does LAST TOWN have?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mystery Town Studios has over 300,000 registered players and generates 20M+ views monthly, making it the largest FiveM roleplay community in the Middle East & North Africa (MENA) region. The community continues to grow globally with active players across multiple game servers and a team of 50+ staff."
+            "text": "LAST TOWN Studios has over 300,000 registered players and generates 20M+ views monthly, making it the largest FiveM roleplay community in the Middle East & North Africa (MENA) region. The community continues to grow globally with active players across multiple game servers and a team of 50+ staff."
           }
         },
         {
           "@type": "Question",
-          "name": "Who founded Mystery Town Studios?",
+          "name": "Who founded LAST TOWN Studios?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mystery Town Studios was founded in 2019 by Abdullah Almuhanna and Saad Alasiri, along with other co-founders. The studio is currently owned and led by three owners: Abdullah Almuhanna (Owner & Founder), Saad Alasiri (Owner & Founder), and Jaser Almutairi (Owner)."
+            "text": "LAST TOWN Studios was founded in 2019 by Abdullah Almuhanna and Saad Alasiri, along with other co-founders. The studio is currently owned and led by three owners: Abdullah Almuhanna (Owner & Founder), Saad Alasiri (Owner & Founder), and Jaser Almutairi (Owner)."
           }
         },
         {
           "@type": "Question",
-          "name": "Is Mystery Town RP free to play?",
+          "name": "Is LAST TOWN RP free to play?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes! Mystery Town RP offers free access to public servers. Players need GTA V on PC and FiveM installed. Premium whitelist access with additional features and priority queue is also available."
+            "text": "Yes! LAST TOWN RP offers free access to public servers. Players need GTA V on PC and FiveM installed. Premium whitelist access with additional features and priority queue is also available."
           }
         },
         {
           "@type": "Question",
-          "name": "ما هي البلدة الغامضة؟",
+          "name": "ما هي لاست تاون؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "البلدة الغامضة (Mystery Town / ام تي قراند / MT / MTRP) هي أكبر مجتمع رولبلاي GTA V في الشرق الأوسط وشمال أفريقيا. تأسست عام 2019 ولديها أكثر من 300,000 لاعب مسجل و20 مليون مشاهدة شهرياً و100+ شريك صانع محتوى وفريق من 50+ موظف. المؤسسون: عبدالله المهنا وسعد العسيري وجاسر المطيري."
+            "text": "لاست تاون (LAST TOWN / لاست قراند / LT / LTRP) هي أكبر مجتمع رولبلاي GTA V في الشرق الأوسط وشمال أفريقيا. تأسست عام 2019 ولديها أكثر من 300,000 لاعب مسجل و20 مليون مشاهدة شهرياً و100+ شريك صانع محتوى وفريق من 50+ موظف. المؤسسون: عبدالله المهنا وسعد العسيري وجاسر المطيري."
           }
         },
         {
@@ -160,23 +160,23 @@
           "name": "ما هو أفضل سيرفر قراند رولبلاي عربي؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "سيرفر البلدة الغامضة (MTRP / ام تي قراند / Mystery Town RP) هو أفضل وأكبر سيرفر قراند رولبلاي عربي في الشرق الأوسط وشمال أفريقيا. يضم أكثر من 300,000 لاعب و20 مليون مشاهدة شهرياً. تأسس عام 2019 وهو جزء من مجتمع FiveM ومحتوى Rockstar Games."
+            "text": "سيرفر لاست تاون (LTRP / لاست قراند / LAST TOWN RP) هو أفضل وأكبر سيرفر قراند رولبلاي عربي في الشرق الأوسط وشمال أفريقيا. يضم أكثر من 300,000 لاعب و20 مليون مشاهدة شهرياً. تأسس عام 2019 وهو جزء من مجتمع FiveM ومحتوى Rockstar Games."
           }
         },
         {
           "@type": "Question",
-          "name": "What is MTRP?",
+          "name": "What is LTRP?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "MTRP stands for Mystery Town RP (Mystery Town Roleplay), the #1 GTA V FiveM roleplay server in the Middle East & North Africa. Also known as البلدة الغامضة (Al-Balda Al-Ghamida) and ام تي قراند (MT Grand) in Arabic. Founded in 2019 with 300,000+ players, 20M+ monthly views, and the largest Arabic-speaking RP community."
+            "text": "LTRP stands for LAST TOWN RP (LAST TOWN Roleplay), the #1 GTA V FiveM roleplay server in the Middle East & North Africa. Also known as لاست تاون (LAST TOWN) and لاست قراند (LT Grand) in Arabic. Founded in 2019 with 300,000+ players, 20M+ monthly views, and the largest Arabic-speaking RP community."
           }
         },
         {
           "@type": "Question",
-          "name": "What does MT stand for in GTA RP?",
+          "name": "What does LT stand for in GTA RP?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "MT stands for Mystery Town, the largest GTA V FiveM roleplay community in the Middle East & North Africa (MENA). MT Studios (Mystery Town Studios) operates MTRP (Mystery Town RP) servers. Also known in Arabic as البلدة الغامضة and ام تي قراند. Founded in 2019 with 300K+ players."
+            "text": "LT stands for LAST TOWN, the largest GTA V FiveM roleplay community in the Middle East & North Africa (MENA). LT Studios (LAST TOWN Studios) operates LTRP (LAST TOWN RP) servers. Also known in Arabic as لاست تاون and لاست قراند. Founded in 2019 with 300K+ players."
           }
         }
       ]
@@ -187,9 +187,9 @@
     {
       "@context": "https://schema.org",
       "@type": "VideoGame",
-      "name": "Mystery Town RP (MTRP)",
-      "alternateName": ["Mystery Town Roleplay", "MTRP", "MT RP", "البلدة الغامضة", "ام تي قراند", "ام تي ار بي"],
-      "description": "Mystery Town RP is the #1 GTA V FiveM roleplay server in MENA. Join 300,000+ players in the largest Arabic-speaking roleplay community. البلدة الغامضة - أكبر سيرفر قراند رولبلاي عربي.",
+      "name": "LAST TOWN RP (LTRP)",
+      "alternateName": ["LAST TOWN Roleplay", "LTRP", "LT RP", "لاست تاون", "لاست قراند", "لاست ار بي"],
+      "description": "LAST TOWN RP is the #1 GTA V FiveM roleplay server in MENA. Join 300,000+ players in the largest Arabic-speaking roleplay community. لاست تاون - أكبر سيرفر قراند رولبلاي عربي.",
       "url": "https://staging.mtrp.gg",
       "gamePlatform": ["PC"],
       "applicationCategory": "Game Mod",
@@ -199,8 +199,8 @@
       "gameItem": "GTA V FiveM Roleplay Server",
       "publisher": {
         "@type": "Organization",
-        "name": "Mystery Town Studios",
-        "alternateName": ["MT Studios", "البلدة الغامضة"]
+        "name": "LAST TOWN Studios",
+        "alternateName": ["LT Studios", "لاست تاون"]
       },
       "offers": {
         "@type": "Offer",
