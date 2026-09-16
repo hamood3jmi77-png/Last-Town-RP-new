@@ -6,7 +6,7 @@
     <h1 class="admin-title">{{ 'تعديل' if item else 'إضافة' }} - {{ cfg.label }}</h1>
     <div class="header-line"></div>
   </div>
-  <a href="{{ url_for('admin_collection_list', key=key) }}" class="btn btn-outline">{{ ic.icon('arrow-left', 14) }} رجوع للقائمة</a>
+  <a href="{{ url_for('admin_collection_list', key=key) }}" class="btn btn-outline">{{ ic.icon('arrow-right', 14) }} العودة للقائمة</a>
 </div>
 
 <form method="post" enctype="multipart/form-data" class="admin-card">
@@ -32,7 +32,7 @@
         {% endif %}
         <input type="hidden" name="{{ field_name }}_existing" value="{{ item[field_name] if item else '' }}">
         <input type="file" name="{{ field_name }}" accept="image/*">
-        <span class="hint">اترك الحقل فارغاً للإبقاء على نفس الصورة.</span>
+        <span class="hint">اترك الحقل فارغاً للإبقاء على الصورة الحالية.</span>
       {% else %}
         <input type="text" name="{{ field_name }}" value="{{ item[field_name] if item else '' }}">
       {% endif %}
@@ -41,7 +41,7 @@
   {% endfor %}
 
   <div class="actions-row">
-    <button type="submit" class="btn btn-primary">{{ ic.icon('doc', 15) }} حفظ</button>
+    <button type="submit" class="btn btn-primary">{{ ic.icon('doc', 15) }} حفظ التغييرات</button>
     <a href="{{ url_for('admin_collection_list', key=key) }}" class="btn btn-outline">إلغاء</a>
   </div>
 </form>
