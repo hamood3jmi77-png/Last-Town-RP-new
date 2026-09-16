@@ -11,12 +11,18 @@
   <div class="tabs" data-reveal><span class="tab active">{{ c['leaderboard.server_tab'] }}</span></div>
 
   {% if entries %}
-  <table class="lb-table" data-reveal>
-    <thead><tr><th>#</th><th>Player</th><th>Playtime</th></tr></thead>
+  <table class="lb-table" data-reveal style="width:100%;text-align:right;">
+    <thead>
+      <tr>
+        <th style="text-align:center;width:60px;">#</th>
+        <th>اللاعب</th>
+        <th>ساعات اللعب</th>
+      </tr>
+    </thead>
     <tbody>
       {% for e in entries %}
       <tr>
-        <td class="lb-rank">{{ e.rank }}</td>
+        <td class="lb-rank" style="text-align:center;">{{ e.rank }}</td>
         <td>{{ e.player_name }}</td>
         <td>{{ ic.icon('clock', 13) }} {{ e.playtime }}</td>
       </tr>
