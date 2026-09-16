@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{% block title %}لوحة التحكم{% endblock %} - {{ c['site.name_line1'] if c else 'MT Admin' }}</title>
+<title>{% block title %}لوحة التحكم{% endblock %} - {{ c['site.name_line1'] if c else 'LT Admin' }}</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
 </head>
 <body>
@@ -12,7 +12,7 @@
 <div class="admin-shell">
   <aside class="admin-sidebar">
     <div class="admin-brand">
-      <span class="badge">MT</span>
+      <span class="badge">LT</span>
       <div>
         <div style="font-weight:700;font-size:0.9rem;">لوحة التحكم</div>
         <div style="font-size:0.72rem;color:var(--muted);">Admin Panel</div>
