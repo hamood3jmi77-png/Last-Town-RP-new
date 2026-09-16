@@ -4,10 +4,10 @@
 <div class="admin-header">
   <div>
     <h1 class="admin-title">{{ cfg.label }}</h1>
-    <p class="admin-subtitle">{{ items|length }} عنصر</p>
+    <p class="admin-subtitle">إجمالي العناصر: {{ items|length }}</p>
     <div class="header-line"></div>
   </div>
-  <a href="{{ url_for('admin_collection_edit', key=key) }}" class="btn btn-primary">{{ ic.icon('plus', 15) }} إضافة جديد</a>
+  <a href="{{ url_for('admin_collection_edit', key=key) }}" class="btn btn-primary">{{ ic.icon('plus', 15) }} إضافة عنصر جديد</a>
 </div>
 
 <div class="admin-card" style="padding:0;overflow-x:auto;">
@@ -16,9 +16,9 @@
     <thead>
       <tr>
         {% for field_name, field_type, label in cfg.fields %}
-          {% if field_type != 'checkbox' %}<th>{{ label }}</th>{% endif %}
+          <th>{{ label }}</th>
         {% endfor %}
-        <th></th>
+        <th style="width:120px; text-align:center;">إجراءات</th>
       </tr>
     </thead>
     <tbody>
@@ -26,15 +26,22 @@
       <tr>
         {% for field_name, field_type, label in cfg.fields %}
           {% if field_type == 'image' %}
-            <td>{% if item[field_name] %}<img class="thumb" src="{{ item[field_name] }}" alt="">{% endif %}</td>
+            <td>{% if item[field_name] %}<img class="thumb" src="{{ item[field_name] }}" alt="">{% else %}<span style="color:var(--muted);">-</span>{% endif %}</td>
           {% elif field_type == 'checkbox' %}
+            <td>
+              {% if item[field_name] %}
+                <span class="badge badge-success">مفعل</span>
+              {% else %}
+                <span class="badge badge-secondary">غير مفعل</span>
+              {% endif %}
+            </td>
           {% else %}
-            <td>{{ item[field_name] }}</td>
+            <td>{{ item[field_name] if item[field_name] is not none else '-' }}</td>
           {% endif %}
         {% endfor %}
-        <td style="white-space:nowrap;">
+        <td style="white-space:nowrap; text-align:center;">
           <a href="{{ url_for('admin_collection_edit', key=key, item_id=item.id) }}" class="btn btn-outline btn-sm">{{ ic.icon('edit', 13) }} تعديل</a>
-          <form method="post" action="{{ url_for('admin_collection_delete', key=key, item_id=item.id) }}" style="display:inline;" onsubmit="return confirm('متأكد من الحذف؟');">
+          <form method="post" action="{{ url_for('admin_collection_delete', key=key, item_id=item.id) }}" style="display:inline;" onsubmit="return confirm('هل أنت متأكد من حذف هذا العنصر؟');">
             <button type="submit" class="btn btn-danger btn-sm">{{ ic.icon('trash', 13) }} حذف</button>
           </form>
         </td>
@@ -43,7 +50,7 @@
     </tbody>
   </table>
   {% else %}
-  <p class="empty-hint">لا توجد عناصر بعد. اضغط "إضافة جديد" لإضافة أول عنصر.</p>
+  <p class="empty-hint" style="padding:2rem; text-align:center;">لا توجد عناصر مضافة حتى الآن. اضغط على "إضافة عنصر جديد" للبدء.</p>
   {% endif %}
 </div>
 {% endblock %}
