@@ -1,0 +1,29 @@
+{% extends "admin/base.html" %}
+{% block content_noauth %}
+{% import "icons.html" as ic %}
+<div class="login-shell">
+  <div class="login-card corner-frame-admin">
+    <h1>MT ADMIN</h1>
+    <div class="login-line"></div>
+    <p class="sub">تسجيل الدخول للوحة التحكم</p>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form method="post">
+      <div class="field">
+        <label>اسم المستخدم</label>
+        <input type="text" name="username" required autofocus>
+      </div>
+      <div class="field">
+        <label>كلمة المرور</label>
+        <input type="password" name="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">{{ ic.icon('arrow', 15) }} دخول</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}{{ c['site.meta_title'] }}{% endblock %}</title>
+<meta name="description" content="{{ c['site.meta_description'] }}">
+<link rel="icon" href="{{ c['site.favicon'] }}" type="image/png">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% import "icons.html" as ic %}
+
+<nav class="navbar">
+  <div class="wrap navbar-inner">
+    <a href="{{ url_for('home') }}" class="brand">
+      <span class="brand-badge">MT</span>
+      <span class="brand-text">
+        <span class="l1">{{ c['site.name_line1'] }}</span>
+        <span class="l2">{{ c['site.name_line2'] }}</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="{{ url_for('home') }}" class="{{ 'active' if request.endpoint=='home' }}">{{ c['nav.home'] }}</a>
+      <a href="{{ url_for('roster') }}" class="{{ 'active' if request.endpoint=='roster' }}">{{ c['nav.roster'] }}</a>
+      <a href="{{ url_for('team') }}" class="{{ 'active' if request.endpoint=='team' }}">{{ c['nav.team'] }}</a>
+      <a href="{{ url_for('live') }}" class="{{ 'active' if request.endpoint=='live' }}">{{ c['nav.live'] }}</a>
+      <a href="{{ url_for('careers') }}" class="{{ 'active' if request.endpoint=='careers' }}">{{ c['nav.careers'] }}</a>
+      <a href="{{ url_for('faq') }}" class="{{ 'active' if request.endpoint=='faq' }}">{{ c['nav.faq'] }}</a>
+      <a href="{{ url_for('leaderboard') }}" class="{{ 'active' if request.endpoint=='leaderboard' }}">{{ c['nav.leaderboard'] }}</a>
+    </div>
+    <div class="nav-actions">
+      <a href="{{ c['nav.store_url'] }}" class="btn btn-primary">{{ c['nav.store_label'] }}</a>
+      <a href="{{ url_for('onboarding') }}" class="btn btn-outline">{{ c['nav.signin_label'] }}</a>
+    </div>
+  </div>
+</nav>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="wrap" style="padding-top:1rem;">
+      {% for category, message in messages %}
+        <div style="padding:0.7rem 1rem;border-radius:0.5rem;margin-bottom:0.5rem;background:{{ 'rgba(34,197,94,0.12)' if category=='success' else 'rgba(220,38,38,0.12)' }};color:{{ '#4ade80' if category=='success' else '#f87171' }};border:1px solid {{ 'rgba(34,197,94,0.3)' if category=='success' else 'rgba(220,38,38,0.3)' }};font-size:0.9rem;">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+{% block content %}{% endblock %}
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <a href="{{ url_for('home') }}" class="brand">
+      <span class="brand-badge">MT</span>
+      <span class="brand-text">
+        <span class="l1">{{ c['site.name_line1'] }}</span>
+        <span class="l2">{{ c['site.name_line2'] }}</span>
+      </span>
+    </a>
+    <div class="footer-info">
+      <div class="row strong">{{ ic.icon('pin', 15) }} {{ c['footer.based_in'] }}</div>
+      <div class="row">{{ ic.icon('globe', 15) }} {{ c['footer.serving'] }}</div>
+      <div class="row">{{ ic.icon('doc', 15) }} {{ c['footer.cr_no'] }}</div>
+      <div class="row">{{ ic.icon('doc', 15) }} {{ c['footer.vat_id'] }}</div>
+      <div class="row">{{ ic.icon('mail', 15) }} {{ c['footer.email'] }}</div>
+    </div>
+    <div class="footer-socials">
+      {% for link in social_links %}
+      <a href="{{ link.url }}" target="_blank" rel="noopener" title="{{ link.platform }}">{{ ic.icon(link.platform|lower, 16) }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="footer-bottom hairline-top">{{ c['footer.copyright'] }}</div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/animations.js') }}" defer></script>
+</body>
+</html>
+

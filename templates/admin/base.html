@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}لوحة التحكم{% endblock %} - {{ c['site.name_line1'] if c else 'MT Admin' }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+{% import "icons.html" as ic %}
+{% if session.get('admin_id') %}
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <div class="admin-brand">
+      <span class="badge">MT</span>
+      <div>
+        <div style="font-weight:700;font-size:0.9rem;">لوحة التحكم</div>
+        <div style="font-size:0.72rem;color:var(--muted);">Admin Panel</div>
+      </div>
+    </div>
+    <div class="side-line"></div>
+    <nav class="admin-nav">
+      <a href="{{ url_for('admin_dashboard') }}" class="{{ 'active' if request.endpoint=='admin_dashboard' }}">{{ ic.icon('home', 16) }} الرئيسية</a>
+      <div class="nav-group-title"><span>النصوص والمحتوى</span><span class="line"></span></div>
+      {% for key, label in (groups or {}).items() %}
+      <a href="{{ url_for('admin_content_group', group=key) }}" class="{{ 'active' if request.view_args and request.view_args.get('group')==key }}">{{ ic.icon('text', 15) }} {{ label }}</a>
+      {% endfor %}
+      {% if not groups %}
+        <a href="{{ url_for('admin_content_group', group='site') }}">{{ ic.icon('text', 15) }} هوية الموقع</a>
+        <a href="{{ url_for('admin_content_group', group='nav') }}">{{ ic.icon('text', 15) }} شريط التنقل</a>
+        <a href="{{ url_for('admin_content_group', group='home') }}">{{ ic.icon('text', 15) }} الصفحة الرئيسية</a>
+        <a href="{{ url_for('admin_content_group', group='shared') }}">{{ ic.icon('text', 15) }} نصوص مشتركة</a>
+        <a href="{{ url_for('admin_content_group', group='faq') }}">{{ ic.icon('text', 15) }} الأسئلة الشائعة</a>
+        <a href="{{ url_for('admin_content_group', group='team') }}">{{ ic.icon('text', 15) }} الفريق</a>
+        <a href="{{ url_for('admin_content_group', group='careers') }}">{{ ic.icon('text', 15) }} الوظائف</a>
+        <a href="{{ url_for('admin_content_group', group='auth') }}">{{ ic.icon('text', 15) }} تسجيل الدخول</a>
+        <a href="{{ url_for('admin_content_group', group='leaderboard') }}">{{ ic.icon('text', 15) }} لوحة المتصدرين</a>
+        <a href="{{ url_for('admin_content_group', group='live') }}">{{ ic.icon('text', 15) }} البث المباشر</a>
+        <a href="{{ url_for('admin_content_group', group='roster') }}">{{ ic.icon('text', 15) }} قائمة صناع المحتوى</a>
+        <a href="{{ url_for('admin_content_group', group='footer') }}">{{ ic.icon('text', 15) }} التذييل</a>
+      {% endif %}
+      <div class="nav-group-title"><span>القوائم القابلة للتكرار</span><span class="line"></span></div>
+      <a href="{{ url_for('admin_collection_list', key='timeline') }}">{{ ic.icon('grid', 15) }} الجدول الزمني</a>
+      <a href="{{ url_for('admin_collection_list', key='servers') }}">{{ ic.icon('grid', 15) }} السيرفرات</a>
+      <a href="{{ url_for('admin_collection_list', key='events') }}">{{ ic.icon('grid', 15) }} الأحداث</a>
+      <a href="{{ url_for('admin_collection_list', key='team') }}">{{ ic.icon('grid', 15) }} أعضاء الفريق</a>
+      <a href="{{ url_for('admin_collection_list', key='roster') }}">{{ ic.icon('grid', 15) }} صناع المحتوى</a>
+      <a href="{{ url_for('admin_collection_list', key='jobs') }}">{{ ic.icon('grid', 15) }} الوظائف الشاغرة</a>
+      <a href="{{ url_for('admin_collection_list', key='faqs') }}">{{ ic.icon('grid', 15) }} الأسئلة الشائعة</a>
+      <a href="{{ url_for('admin_collection_list', key='streams') }}">{{ ic.icon('grid', 15) }} البثوث المباشرة</a>
+      <a href="{{ url_for('admin_collection_list', key='leaderboard') }}">{{ ic.icon('grid', 15) }} لوحة المتصدرين</a>
+      <a href="{{ url_for('admin_collection_list', key='social') }}">{{ ic.icon('link', 15) }} روابط التواصل</a>
+      <div class="nav-group-title"><span>الحساب</span><span class="line"></span></div>
+      <a href="{{ url_for('admin_account') }}" class="{{ 'active' if request.endpoint=='admin_account' }}">{{ ic.icon('gear', 15) }} إعدادات الحساب</a>
+      <a href="{{ url_for('home') }}" target="_blank">{{ ic.icon('link', 15) }} عرض الموقع</a>
+      <a href="{{ url_for('admin_logout') }}">{{ ic.icon('logout', 15) }} تسجيل الخروج</a>
+    </nav>
+  </aside>
+  <main class="admin-main">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+</div>
+{% else %}
+  {% block content_noauth %}{% endblock %}
+{% endif %}
+</body>
+</html>

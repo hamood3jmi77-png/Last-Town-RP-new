@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+{% import "icons.html" as ic %}
+<div class="wrap">
+  <div class="auth-card corner-frame" data-reveal="zoom">
+    <h1 class="auth-title">{{ c['auth.title'] }}</h1>
+    <p class="auth-subtitle">{{ c['auth.subtitle'] }}</p>
+
+    <div class="auth-oauth">
+      <button class="btn btn-discord btn-block">{{ ic.icon('discord', 16) }} {{ c['auth.discord_btn'] }}</button>
+      <button class="btn btn-steam btn-block">{{ ic.icon('gear', 16) }} {{ c['auth.steam_btn'] }}</button>
+    </div>
+
+    <div class="auth-divider">{{ c['auth.divider'] }}</div>
+
+    <form method="post" action="#">
+      <div class="form-group">
+        <label class="form-label">{{ c['auth.email_label'] }}</label>
+        <input type="email" class="form-input" placeholder="{{ c['auth.email_placeholder'] }}">
+      </div>
+      <div class="form-group">
+        <label class="form-label">{{ c['auth.password_label'] }} <a href="#" class="link">{{ c['auth.forgot_password'] }}</a></label>
+        <input type="password" class="form-input" placeholder="{{ c['auth.password_placeholder'] }}">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">{{ ic.icon('arrow', 15) }} {{ c['auth.submit'] }}</button>
+    </form>
+
+    <div class="auth-footer">
+      <a href="#">{{ c['auth.signup_prompt'] }}</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

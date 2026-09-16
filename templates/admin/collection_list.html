@@ -1,0 +1,49 @@
+{% extends "admin/base.html" %}
+{% block content %}
+{% import "icons.html" as ic %}
+<div class="admin-header">
+  <div>
+    <h1 class="admin-title">{{ cfg.label }}</h1>
+    <p class="admin-subtitle">{{ items|length }} عنصر</p>
+    <div class="header-line"></div>
+  </div>
+  <a href="{{ url_for('admin_collection_edit', key=key) }}" class="btn btn-primary">{{ ic.icon('plus', 15) }} إضافة جديد</a>
+</div>
+
+<div class="admin-card" style="padding:0;overflow-x:auto;">
+  {% if items %}
+  <table class="admin-table">
+    <thead>
+      <tr>
+        {% for field_name, field_type, label in cfg.fields %}
+          {% if field_type != 'checkbox' %}<th>{{ label }}</th>{% endif %}
+        {% endfor %}
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      <tr>
+        {% for field_name, field_type, label in cfg.fields %}
+          {% if field_type == 'image' %}
+            <td>{% if item[field_name] %}<img class="thumb" src="{{ item[field_name] }}" alt="">{% endif %}</td>
+          {% elif field_type == 'checkbox' %}
+          {% else %}
+            <td>{{ item[field_name] }}</td>
+          {% endif %}
+        {% endfor %}
+        <td style="white-space:nowrap;">
+          <a href="{{ url_for('admin_collection_edit', key=key, item_id=item.id) }}" class="btn btn-outline btn-sm">{{ ic.icon('edit', 13) }} تعديل</a>
+          <form method="post" action="{{ url_for('admin_collection_delete', key=key, item_id=item.id) }}" style="display:inline;" onsubmit="return confirm('متأكد من الحذف؟');">
+            <button type="submit" class="btn btn-danger btn-sm">{{ ic.icon('trash', 13) }} حذف</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="empty-hint">لا توجد عناصر بعد. اضغط "إضافة جديد" لإضافة أول عنصر.</p>
+  {% endif %}
+</div>
+{% endblock %}

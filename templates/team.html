@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+{% import "icons.html" as ic %}
+<div class="wrap">
+  <div class="page-header" data-reveal>
+    <div class="section-eyebrow-line"><span class="seg"></span><span class="label">Team</span><span class="seg right"></span></div>
+    <h1 class="page-title">{{ c['team.title'] }}</h1>
+    <p class="page-subtitle">{{ c['team.subtitle'] }}</p>
+    <div class="deco-underline"></div>
+  </div>
+  {% if members %}
+  <div class="grid-4" style="margin-bottom:4rem;" data-reveal-group>
+    {% for m in members %}
+    <div class="card person-card" data-reveal>
+      <img class="person-avatar" src="{{ m.image or '/static/images/MT.Avatar_1771104723139-yBcHNWFs.png' }}" alt="{{ m.name }}">
+      <div class="person-name">{{ m.name }}</div>
+      <div class="person-role">{{ m.role }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-state" style="max-width:34rem;margin:2rem auto 4rem;" data-reveal>
+    <span style="color:var(--orange);">{{ ic.icon('dot', 12) }}</span> {{ c['team.empty'] }}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

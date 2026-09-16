@@ -1,0 +1,28 @@
+{% extends "admin/base.html" %}
+{% block content %}
+{% import "icons.html" as ic %}
+<div class="admin-header">
+  <div>
+    <h1 class="admin-title">إعدادات الحساب</h1>
+    <p class="admin-subtitle">غيّر اسم المستخدم أو كلمة المرور الخاصة بلوحة التحكم.</p>
+    <div class="header-line"></div>
+  </div>
+</div>
+
+<form method="post" class="admin-card" style="max-width:26rem;">
+  <div class="card-line"></div>
+  <div class="field">
+    <label>كلمة المرور الحالية <span class="hint">مطلوبة لتأكيد أي تغيير</span></label>
+    <input type="password" name="current_password" required>
+  </div>
+  <div class="field">
+    <label>اسم مستخدم جديد <span class="hint">اتركه فارغاً لعدم التغيير</span></label>
+    <input type="text" name="username" placeholder="{{ session.get('admin_username') }}">
+  </div>
+  <div class="field">
+    <label>كلمة مرور جديدة <span class="hint">اتركها فارغة لعدم التغيير</span></label>
+    <input type="password" name="new_password">
+  </div>
+  <button type="submit" class="btn btn-primary">{{ ic.icon('doc', 15) }} حفظ</button>
+</form>
+{% endblock %}

@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% block content %}
+{% import "icons.html" as ic %}
+
+<section class="hero" style="background-image: url('{{ c['home.hero_bg_image'] }}');">
+  <div class="hero-content" data-reveal="zoom">
+    <div class="hero-eyebrow">{{ ic.icon('fire', 15) }} {{ c['home.eyebrow'] }}</div>
+    <h1 class="hero-title">{{ c['home.hero_title_line1'] }}<span class="accent">{{ c['home.hero_title_line2'] }}</span></h1>
+    <p class="hero-desc">{{ c['home.hero_desc'] }}</p>
+    <div class="hero-actions">
+      <a href="{{ c['home.hero_btn_primary_url'] }}" class="btn btn-primary btn-lg">{{ ic.icon('play', 16) }} {{ c['home.hero_btn_primary'] }}</a>
+      <a href="{{ c['home.hero_btn_secondary_url'] }}" class="btn btn-outline btn-lg">{{ c['home.hero_btn_secondary'] }} {{ ic.icon('arrow', 15) }}</a>
+    </div>
+    <div class="hero-socials">
+      {% for link in social_links %}
+      <a href="{{ link.url }}" target="_blank" rel="noopener" title="{{ link.platform }}">{{ ic.icon(link.platform|lower, 15) }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-header" data-reveal>
+      <div class="section-eyebrow-line"><span class="seg"></span><span class="label">Servers</span><span class="seg right"></span></div>
+      <h2 class="section-title">{{ c['home.servers_title'] }}</h2>
+      <p class="section-subtitle">{{ c['home.servers_subtitle'] }}</p>
+      <div class="deco-underline"></div>
+    </div>
+    {% if servers %}
+    <div class="grid-3" data-reveal-group>
+      {% for s in servers %}
+      <div class="card" data-reveal>
+        {% if s.image %}<img class="card-img" src="{{ s.image }}" alt="{{ s.name }}">{% endif %}
+        <div class="card-body">
+          <h3 style="font-family:var(--font-display);font-weight:700;margin:0 0 0.4rem;">{{ s.name }}</h3>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin:0 0 1rem;">{{ s.description }}</p>
+          {% if s.join_url %}<a href="{{ s.join_url }}" class="btn btn-primary btn-block">{{ ic.icon('arrow', 14) }} Join</a>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="grid-3" data-reveal-group>
+      {% for i in range(3) %}
+      <div class="card" data-reveal><div class="card-img" style="background:#141414;"></div><div class="card-body"><div style="height:1rem;background:#1c1c1c;border-radius:4px;width:70%;margin-bottom:0.6rem;"></div><div style="height:0.8rem;background:#1c1c1c;border-radius:4px;width:50%;"></div></div></div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<div class="wrap"><div class="deco-line" data-reveal="line"></div></div>
+
+<section class="section-tight grid-lines-bg" style="background:rgba(255,255,255,0.015);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);">
+  <div class="wrap" style="position:relative;">
+    <div class="section-eyebrow-line" data-reveal><span class="seg"></span><span class="label">Live Stats</span><span class="seg right"></span></div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:2rem;" data-reveal>{{ c['home.pulse_title'] }}</h2>
+    <div class="grid-4" data-reveal-group>
+      <div class="stat-block" data-reveal><div class="stat-icon">{{ ic.icon('discord-members', 19) }}</div><div class="stat-value">{{ c['home.pulse_discord_value'] }}</div><div class="stat-label">{{ c['home.pulse_discord_label'] }}</div></div>
+      <div class="stat-block" data-reveal><div class="stat-icon">{{ ic.icon('followers', 19) }}</div><div class="stat-value">{{ c['home.pulse_followers_value'] }}</div><div class="stat-label">{{ c['home.pulse_followers_label'] }}</div></div>
+      <div class="stat-block" data-reveal><div class="stat-icon">{{ ic.icon('eye', 19) }}</div><div class="stat-value">{{ c['home.pulse_views_value'] }}</div><div class="stat-label">{{ c['home.pulse_views_label'] }}</div></div>
+      <div class="stat-block" data-reveal><div class="stat-icon">{{ ic.icon('clock', 19) }}</div><div class="stat-value">{{ c['home.pulse_hours_value'] }}</div><div class="stat-label">{{ c['home.pulse_hours_label'] }}</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-header" data-reveal>
+      <div class="section-eyebrow-line"><span class="seg"></span><span class="label">Highlights</span><span class="seg right"></span></div>
+      <h2 class="section-title">{{ c['home.events_title'] }}</h2>
+      <p class="section-subtitle">{{ c['home.events_subtitle'] }}</p>
+      <div class="deco-underline"></div>
+    </div>
+    <div class="tabs" data-reveal>
+      <span class="tab active">All</span>
+      <span class="tab">War</span>
+      <span class="tab">Rivalry</span>
+      <span class="tab">Racing</span>
+      <span class="tab">Heist</span>
+      <span class="tab">Event</span>
+    </div>
+    {% if events %}
+    <div class="grid-3" data-reveal-group>
+      {% for e in events %}
+      <div class="card" data-reveal>
+        {% if e.image %}<img class="card-img" src="{{ e.image }}" alt="{{ e.title }}">{% endif %}
+        <div class="card-body">
+          <span style="color:var(--orange);font-size:0.75rem;font-weight:700;text-transform:uppercase;">{{ e.category }}</span>
+          <h3 style="font-family:var(--font-display);font-weight:700;margin:0.3rem 0;">{{ e.title }}</h3>
+          {% if e.event_date %}<p style="color:var(--text-muted);font-size:0.82rem;margin:0;">{{ e.event_date }}</p>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state" data-reveal>{{ c['home.events_empty'] }}</div>
+    {% endif %}
+
+    <div class="divider-dot-line">{{ ic.icon('dot', 8) }}</div>
+
+    <div class="grid-4" data-reveal-group>
+      <div class="stat-block" data-reveal><div class="stat-value orange">{{ c['home.stats_players_value'] }}</div><div class="stat-label">{{ c['home.stats_players_label'] }}</div></div>
+      <div class="stat-block" data-reveal><div class="stat-value orange">{{ c['home.stats_creators_value'] }}</div><div class="stat-label">{{ c['home.stats_creators_label'] }}</div></div>
+      <div class="stat-block" data-reveal><div class="stat-value orange">{{ c['home.stats_impressions_value'] }}</div><div class="stat-label">{{ c['home.stats_impressions_label'] }}</div></div>
+      <div class="stat-block" data-reveal><div class="stat-value orange">{{ c['home.stats_team_value'] }}</div><div class="stat-label">{{ c['home.stats_team_label'] }}</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="deco-line" data-reveal="line"></div></div>
+
+<section class="section">
+  <div class="wrap-md">
+    <div class="section-eyebrow-line" data-reveal><span class="seg"></span><span class="label">Our Story</span><span class="seg right"></span></div>
+    <h2 class="section-title" style="text-align:center;" data-reveal>{{ c['home.journey_title'] }}</h2>
+    <div class="deco-underline" data-reveal></div>
+    <div class="timeline" style="margin-top:2.5rem;" data-reveal-group>
+      {% for t in timeline %}
+      <div class="timeline-item" data-reveal="left">
+        <div class="timeline-year">{{ t.year }}</div>
+        <div class="timeline-title">{{ t.title }}</div>
+        <div class="timeline-desc">{{ t.description }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-header" data-reveal>
+      <div class="section-eyebrow-line"><span class="seg"></span><span class="label">Gallery</span><span class="seg right"></span></div>
+      <h2 class="section-title">{{ c['home.gallery_title'] }}</h2>
+      <p class="section-subtitle">{{ c['home.gallery_subtitle'] }}</p>
+      <div class="deco-underline"></div>
+    </div>
+    <div class="gallery" data-reveal-group>
+      <a href="#" data-reveal="zoom"><img src="/static/images/gta-car.webp" alt=""></a>
+      <a href="#" data-reveal="zoom"><img src="/static/images/gta-night-city.webp" alt=""></a>
+      <a href="#" data-reveal="zoom"><img src="/static/images/s8-bg-city.webp" alt=""></a>
+      <a href="#" data-reveal="zoom"><img src="/static/images/theendmt.webp" alt=""></a>
+      <a href="#" data-reveal="zoom"><img src="/static/images/s8-trailer-thumb.webp" alt=""></a>
+      <a href="#" data-reveal="zoom"><img src="/static/images/hero-bg.webp" alt=""></a>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight" style="text-align:center;">
+  <div class="wrap-sm" data-reveal>
+    <div class="section-eyebrow-line"><span class="seg"></span><span class="label">Stay Connected</span><span class="seg right"></span></div>
+    <h2 class="section-title">{{ c['home.social_cta_title'] }}</h2>
+    <p class="section-subtitle" style="margin-bottom:1.6rem;">{{ c['home.social_cta_subtitle'] }}</p>
+    <a href="{{ c['home.social_cta_url'] }}" target="_blank" class="btn btn-outline">{{ ic.icon('x', 15) }} {{ c['home.social_cta_button'] }}</a>
+  </div>
+</section>
+
+{% endblock %}

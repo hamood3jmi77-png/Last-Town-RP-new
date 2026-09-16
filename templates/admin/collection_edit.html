@@ -1,0 +1,48 @@
+{% extends "admin/base.html" %}
+{% block content %}
+{% import "icons.html" as ic %}
+<div class="admin-header">
+  <div>
+    <h1 class="admin-title">{{ 'تعديل' if item else 'إضافة' }} - {{ cfg.label }}</h1>
+    <div class="header-line"></div>
+  </div>
+  <a href="{{ url_for('admin_collection_list', key=key) }}" class="btn btn-outline">{{ ic.icon('arrow-left', 14) }} رجوع للقائمة</a>
+</div>
+
+<form method="post" enctype="multipart/form-data" class="admin-card">
+  {% for field_name, field_type, label in cfg.fields %}
+  <div class="field">
+    {% if field_type == 'checkbox' %}
+      <label class="field-checkbox">
+        <input type="checkbox" name="{{ field_name }}" {% if item and item[field_name] %}checked{% endif %}>
+        {{ label }}
+      </label>
+    {% else %}
+      <label>{{ label }}</label>
+      {% if field_type == 'textarea' %}
+        <textarea name="{{ field_name }}">{{ item[field_name] if item else '' }}</textarea>
+      {% elif field_type == 'number' %}
+        <input type="number" name="{{ field_name }}" value="{{ item[field_name] if item else 0 }}">
+      {% elif field_type == 'image' %}
+        {% if item and item[field_name] %}
+        <div class="current-image">
+          <img src="{{ item[field_name] }}" alt="">
+          <span style="color:var(--muted);font-size:0.8rem;">الصورة الحالية</span>
+        </div>
+        {% endif %}
+        <input type="hidden" name="{{ field_name }}_existing" value="{{ item[field_name] if item else '' }}">
+        <input type="file" name="{{ field_name }}" accept="image/*">
+        <span class="hint">اترك الحقل فارغاً للإبقاء على نفس الصورة.</span>
+      {% else %}
+        <input type="text" name="{{ field_name }}" value="{{ item[field_name] if item else '' }}">
+      {% endif %}
+    {% endif %}
+  </div>
+  {% endfor %}
+
+  <div class="actions-row">
+    <button type="submit" class="btn btn-primary">{{ ic.icon('doc', 15) }} حفظ</button>
+    <a href="{{ url_for('admin_collection_list', key=key) }}" class="btn btn-outline">إلغاء</a>
+  </div>
+</form>
+{% endblock %}

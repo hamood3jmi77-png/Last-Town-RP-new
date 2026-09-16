@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+{% import "icons.html" as ic %}
+<div class="wrap-md">
+  <div class="page-header" data-reveal>
+    <div class="section-eyebrow-line"><span class="seg"></span><span class="label">Leaderboard</span><span class="seg right"></span></div>
+    <h1 class="page-title">{{ c['leaderboard.title'] }}</h1>
+    <p class="page-subtitle">{{ c['leaderboard.subtitle'] }}</p>
+    <div class="deco-underline"></div>
+  </div>
+  <div class="tabs" data-reveal><span class="tab active">{{ c['leaderboard.server_tab'] }}</span></div>
+
+  {% if entries %}
+  <table class="lb-table" data-reveal>
+    <thead><tr><th>#</th><th>Player</th><th>Playtime</th></tr></thead>
+    <tbody>
+      {% for e in entries %}
+      <tr>
+        <td class="lb-rank">{{ e.rank }}</td>
+        <td>{{ e.player_name }}</td>
+        <td>{{ ic.icon('clock', 13) }} {{ e.playtime }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <div class="empty-state" style="margin:2rem 0;" data-reveal>{{ c['leaderboard.empty'] }}</div>
+  {% endif %}
+
+  <div class="divider-dot-line">{{ ic.icon('dot', 8) }}</div>
+  <p style="text-align:center;color:var(--text-muted);font-size:0.85rem;margin:0 0 4rem;">{{ c['leaderboard.note'] }}</p>
+</div>
+{% endblock %}

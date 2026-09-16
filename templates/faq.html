@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+{% import "icons.html" as ic %}
+<div class="wrap">
+  <div class="page-header" data-reveal>
+    <a href="{{ url_for('home') }}" class="back-link">{{ ic.icon('arrow-left', 14) }} {{ c['shared.back_to_home'] }}</a>
+    <div class="section-eyebrow-line"><span class="seg"></span><span class="label">FAQ</span><span class="seg right"></span></div>
+    <h1 class="page-title">{{ c['faq.title'] }}</h1>
+    <p class="page-subtitle">{{ c['faq.subtitle'] }}</p>
+    <div class="deco-underline"></div>
+  </div>
+  {% if faqs %}
+  <div class="faq-list" data-reveal-group>
+    {% for f in faqs %}
+    <div class="faq-item side-rule" data-reveal>
+      <div class="faq-q">{{ f.question }}</div>
+      <div class="faq-a">{{ f.answer }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-state" style="max-width:34rem;margin:2rem auto 4rem;" data-reveal>No questions added yet.</div>
+  {% endif %}
+</div>
+{% endblock %}

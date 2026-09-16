@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+{% import "icons.html" as ic %}
+<div class="wrap">
+  <div class="page-header" data-reveal>
+    <a href="{{ url_for('home') }}" class="back-link">{{ ic.icon('arrow-left', 14) }} {{ c['shared.back_to_home'] }}</a>
+    <div class="section-eyebrow-line"><span class="seg"></span><span class="label">Careers</span><span class="seg right"></span></div>
+    <h1 class="page-title">{{ c['careers.title'] }}</h1>
+    <p class="page-subtitle">{{ c['careers.subtitle'] }}</p>
+    <div class="deco-underline"></div>
+  </div>
+
+  <div class="wrap-md" style="margin-top:2.5rem;">
+    <h2 style="font-family:var(--font-display);font-weight:700;font-size:1.2rem;margin-bottom:1.2rem;" data-reveal>
+      {{ c['careers.open_positions_label'] }} <span style="color:var(--text-muted);font-weight:400;font-size:0.9rem;">({{ jobs|length }} {{ c['careers.roles_suffix'] }})</span>
+    </h2>
+
+    {% if jobs %}
+    <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:4rem;" data-reveal-group>
+      {% for j in jobs %}
+      <div class="card job-card side-rule" data-reveal>
+        <div class="job-title">{{ j.title }}</div>
+        <div class="job-meta">
+          {% if j.department %}<span>{{ j.department }}</span>{% endif %}
+          {% if j.location %}<span>{{ ic.icon('pin', 12) }} {{ j.location }}</span>{% endif %}
+          {% if j.job_type %}<span>{{ ic.icon('clock', 12) }} {{ j.job_type }}</span>{% endif %}
+        </div>
+        {% if j.description %}<div class="job-desc">{{ j.description }}</div>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state" style="margin-bottom:4rem;" data-reveal>
+      <div class="title">{{ c['careers.empty_title'] }}</div>
+      <div>{{ c['careers.empty_desc'] }}</div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

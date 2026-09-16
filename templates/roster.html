@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+{% import "icons.html" as ic %}
+<div class="wrap">
+  <div class="page-header" data-reveal>
+    <div class="section-eyebrow-line"><span class="seg"></span><span class="label">Roster</span><span class="seg right"></span></div>
+    <h1 class="page-title">{{ c['roster.title'] }}</h1>
+    <p class="page-subtitle">{{ c['roster.subtitle'] }}</p>
+    <div class="deco-underline"></div>
+  </div>
+  <div class="tabs" data-reveal><span class="tab active">{{ c['roster.filter_label'] }}</span></div>
+  {% if creators %}
+  <div class="grid-4" style="margin-bottom:4rem;" data-reveal-group>
+    {% for cr in creators %}
+    <a href="{{ cr.url or '#' }}" target="_blank" class="card person-card" data-reveal>
+      <img class="person-avatar" src="{{ cr.image or '/static/images/MT.Avatar_1771104723139-yBcHNWFs.png' }}" alt="{{ cr.name }}">
+      <div class="person-name">{{ cr.name }}</div>
+      <div class="person-role">{{ cr.platform }}</div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-state" style="max-width:34rem;margin:2rem auto 4rem;" data-reveal>
+    <div class="title">{{ c['roster.empty'] }}</div>
+    <div>{{ c['roster.empty2'] }}</div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
