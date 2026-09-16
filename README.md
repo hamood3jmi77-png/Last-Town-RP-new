@@ -1,12 +1,19 @@
-# Mystery Town — موقع جديد + لوحة تحكم
+# LAST TOWN — موقع جديد + لوحة تحكم
 
-موقع Mystery Town معاد بناؤه بالكامل بـ HTML/CSS عادي (بدل React SPA)، مربوط بقاعدة بيانات SQLite، مع لوحة تحكم (Admin Panel) حقيقية تتحكم بكل نص وصورة في الموقع.
+موقع **LAST TOWN** معاد بناؤه بالكامل بـ HTML/CSS عادي (بدل React SPA)، مربوط بقاعدة بيانات SQLite، مع لوحة تحكم (Admin Panel) حقيقية تتحكم بكل نص وصورة في الموقع.
 
-## التشغيل
+---
 
-```bash
-cd mtrp_admin
-pip install -r requirements.txt
+## التشغيل المحلي (Development)
+
+1. **تثبيت الاعتماديات وإعداد البيئة:**
+   ```bash
+   cd lasttown_admin
+   python3 -m venv venv
+   source venv/bin/activate  # في Linux/macOS
+   # venv\Scripts\activate   # في Windows
+
+   pip install -r requirements.txt
 python3 app.py
 ```
 
@@ -25,21 +32,21 @@ python3 app.py
 ## هيكل المشروع
 
 ```
-mtrp_admin/
+lasttown_admin/
 ├── app.py              # Flask app (كل الـ routes، العامة والأدمن)
-├── db.py                # قاعدة البيانات + المحتوى الافتراضي
-├── mtrp.db              # قاعدة البيانات (تتكون تلقائياً، غير موجودة بالبداية)
+├── db.py               # قاعدة البيانات + المحتوى الافتراضي
+├── lasttown.db         # قاعدة البيانات (تتكون تلقائياً، غير موجودة بالبداية)
 ├── requirements.txt
 ├── templates/
-│   ├── base.html         # القالب الأساسي (navbar + footer)
+│   ├── base.html        # القالب الأساسي (navbar + footer)
 │   ├── home.html, faq.html, team.html, careers.html,
 │   │   roster.html, leaderboard.html, live.html, onboarding.html
-│   └── admin/             # كل صفحات لوحة التحكم
+│   └── admin/          # كل صفحات لوحة التحكم
 └── static/
-    ├── css/style.css      # ستايل الموقع العام (نفس هوية الموقع الأصلي)
-    ├── css/admin.css       # ستايل لوحة التحكم
-    ├── images/              # صور الموقع الأصلية
-    └── uploads/              # الصور اللي ترفعها من لوحة التحكم
+    ├── css/style.css     # ستايل الموقع العام (نفس هوية LAST TOWN)
+    ├── css/admin.css      # ستايل لوحة التحكم
+    ├── images/            # صور الموقع الأصلية
+    └── uploads/           # الصور اللي ترفعها من لوحة التحكم
 ```
 
 ## وش تقدر تتحكم فيه من لوحة التحكم
