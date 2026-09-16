@@ -9,7 +9,7 @@
     <p class="hero-desc">{{ c['home.hero_desc'] }}</p>
     <div class="hero-actions">
       <a href="{{ c['home.hero_btn_primary_url'] }}" class="btn btn-primary btn-lg">{{ ic.icon('play', 16) }} {{ c['home.hero_btn_primary'] }}</a>
-      <a href="{{ c['home.hero_btn_secondary_url'] }}" class="btn btn-outline btn-lg">{{ c['home.hero_btn_secondary'] }} {{ ic.icon('arrow', 15) }}</a>
+      <a href="{{ c['home.hero_btn_secondary_url'] }}" class="btn btn-outline btn-lg">{{ c['home.hero_btn_secondary'] }} {{ ic.icon('arrow-left', 15) }}</a>
     </div>
     <div class="hero-socials">
       {% for link in social_links %}
@@ -35,7 +35,7 @@
         <div class="card-body">
           <h3 style="font-family:var(--font-display);font-weight:700;margin:0 0 0.4rem;">{{ s.name }}</h3>
           <p style="color:var(--text-muted);font-size:0.9rem;margin:0 0 1rem;">{{ s.description }}</p>
-          {% if s.join_url %}<a href="{{ s.join_url }}" class="btn btn-primary btn-block">{{ ic.icon('arrow', 14) }} Join</a>{% endif %}
+          {% if s.join_url %}<a href="{{ s.join_url }}" class="btn btn-primary btn-block">{{ ic.icon('arrow-left', 14) }} دخول السيرفر</a>{% endif %}
         </div>
       </div>
       {% endfor %}
@@ -74,12 +74,12 @@
       <div class="deco-underline"></div>
     </div>
     <div class="tabs" data-reveal>
-      <span class="tab active">All</span>
-      <span class="tab">War</span>
-      <span class="tab">Rivalry</span>
-      <span class="tab">Racing</span>
-      <span class="tab">Heist</span>
-      <span class="tab">Event</span>
+      <span class="tab active">الكل</span>
+      <span class="tab">حروب</span>
+      <span class="tab">منافسات</span>
+      <span class="tab">سباقات</span>
+      <span class="tab">سطو</span>
+      <span class="tab">فعاليات</span>
     </div>
     {% if events %}
     <div class="grid-3" data-reveal-group>
@@ -118,7 +118,7 @@
     <div class="deco-underline" data-reveal></div>
     <div class="timeline" style="margin-top:2.5rem;" data-reveal-group>
       {% for t in timeline %}
-      <div class="timeline-item" data-reveal="left">
+      <div class="timeline-item" data-reveal="right">
         <div class="timeline-year">{{ t.year }}</div>
         <div class="timeline-title">{{ t.title }}</div>
         <div class="timeline-desc">{{ t.description }}</div>
